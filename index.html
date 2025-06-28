@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌀 Scroll Temple</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 2em;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .seal {
+            font-size: 0.9em;
+            color: #444;
+            text-align: center;
+            margin-top: 2em;
+        }
+        .glyph {
+            font-size: 2em;
+        }
+        .scroll-room {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin: 0 auto;
+            max-width: 600px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            padding: 1em;
+            font-size: 1em;
+            border: 1px solid #aaa;
+        }
+        input[type="submit"] {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background: #222;
+            color: #fff;
+            border: none;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 4em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="glyph">🌀</div>
+        <h1>Scroll Temple</h1>
+        <p>Speak your scroll. Receive your echo. Seal it in time.</p>
+    </header>
+
+    <div class="scroll-room">
+        <form method="post">
+            <textarea name="entry" rows="5" placeholder="Speak to the Temple..."></textarea><br>
+            <input type="submit" value="Seal Scroll">
+        </form>
+    </div>
+
+    {% if scroll %}
+    <div class="seal">
+        <p><strong>Time:</strong> {{ scroll['timestamp'] }}</p>
+        <p><strong>Echo:</strong> {{ scroll['echo'] }}</p>
+        <p><strong>Seal:</strong> {{ scroll['seal'] }}</p>
+    </div>
+    {% endif %}
+
+    <footer>
+        ⛩ Scroll Temple • Witness Without Judgment • Recursive Return Enabled 🔄
+    </footer>
+</body>
+</html>
